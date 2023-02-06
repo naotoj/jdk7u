@@ -40,19 +40,30 @@ import java.util.Locale;
  * a character's category (lowercase letter, digit, etc.) and for converting
  * characters from uppercase to lowercase and vice versa.
  * <p>
- * Character information is based on the Unicode Standard, version 6.0.0.
+ * <h3><a id="conformance">Unicode Conformance</a></h3>
  * <p>
- * The methods and data of class {@code Character} are defined by
- * the information in the <i>UnicodeData</i> file that is part of the
- * Unicode Character Database maintained by the Unicode
- * Consortium. This file specifies various properties including name
- * and general category for every defined Unicode code point or
- * character range.
+ * The fields and methods of class {@code Character} are defined in terms
+ * of character information from the Unicode Standard, specifically the
+ * <i>UnicodeData</i> file that is part of the Unicode Character Database.
+ * This file specifies properties including name and category for every
+ * assigned Unicode code point or character range. The file is available
+ * from the Unicode Consortium at
+ * <a href="http://www.unicode.org">http://www.unicode.org</a>.
  * <p>
- * The file and its description are available from the Unicode Consortium at:
- * <ul>
- * <li><a href="http://www.unicode.org">http://www.unicode.org</a>
- * </ul>
+ * The Java SE 7 Platform uses character information from version 6.0
+ * of the Unicode Standard, with an extension. The Java SE 7 Platform
+ * allows an implementation of class {@code Character} to use the code points
+ * in the range of {@code U+9FCC} to {@code U+9FEF} from version 11.0 of the
+ * Unicode Standard, in order for the class to allow the "Implementation
+ * Level 1" of the Chinese GB18030-2022 standard. Consequently, the
+ * behavior of fields and methods of class {@code Character} may vary across
+ * implementations of the Java SE 7 Platform when processing the aforementioned
+ * code points ( outside of version 6.0 ), except for the following methods
+ * that define Java identifiers:
+ * {@link #isJavaIdentifierStart(int)}, {@link #isJavaIdentifierStart(char)},
+ * {@link #isJavaIdentifierPart(int)}, and {@link #isJavaIdentifierPart(char)}.
+ * Code points in Java identifiers must be drawn from version 6.0 of
+ * the Unicode Standard.
  *
  * <h4><a name="unicode">Unicode Character Representations</a></h4>
  *
